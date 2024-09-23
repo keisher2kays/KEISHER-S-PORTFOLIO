@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   padding: 0;
   margin: 0;
@@ -595,7 +594,7 @@
   top: 1em;
   left: 27em;
   font-family: "baloo", BalooBhaijaan;
-  color: #041680;
+  color: white;
 }
 
 .projects .context {
@@ -611,7 +610,7 @@
 }
 
 .projects .area {
-  background: white;
+  background: black;
   background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
   width: 100%;
   height: 100vh;
@@ -778,8 +777,6 @@
   height: 31vh;
   overflow: hidden;
   margin: 10px;
-  -webkit-box-shadow: 2px 2px  #8a9af3;
-          box-shadow: 2px 2px  #8a9af3;
 }
 
 .projects #img-1 img {
@@ -797,11 +794,11 @@
   color: white;
   bottom: -999px;
   z-index: 2;
-  height: 8vh;
+  height: 15vh;
 }
 
 .projects .img-block .heading3 {
-  margin-top: -10px;
+  margin-top: -4px;
   margin-bottom: 8px;
   font-family: "easy", Baloo2;
 }
@@ -1193,9 +1190,17 @@
   .projects #img-1 {
     width: 300px;
     height: 18vh;
+    height: 18vh;
   }
   .projects #img-1 .img-block {
-    height: 5vh;
+    height: 10vh;
+  }
+  .projects #img-1 .img-block .heading3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .projects #img-1 .img-block .btn-1 {
+    padding: 7px 12px;
   }
   .projects .previous2 .next2 {
     left: 66%;
@@ -1233,165 +1238,6 @@
 
 /*SMALL TO MEDIUM SCREENS*/
 @media only screen and (min-width: 320px) and (max-width: 375px) {
-  .banner :root {
-    --primColor: #dcdcdc;
-    --secoColor: #555555;
-    --cornerRad: 4px;
-  }
-  .banner body {
-    background-color: var(--primColor);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-  }
-  .banner details {
-    margin: 40px;
-  }
-  .banner summary {
-    -webkit-writing-mode: vertical-lr;
-        -ms-writing-mode: tb-lr;
-            writing-mode: vertical-lr;
-    text-align: center;
-    padding: 12px 10px;
-    width: 23px;
-    height: 17px;
-    background-color: var(--primColor);
-    border: 2px solid var(--secoColor);
-    border-radius: var(--cornerRad);
-    color: var(--secoColor);
-    cursor: pointer;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-    outline: none;
-    -webkit-transition: -webkit-transform 200ms ease-in-out 0s;
-    transition: -webkit-transform 200ms ease-in-out 0s;
-    transition: transform 200ms ease-in-out 0s;
-    transition: transform 200ms ease-in-out 0s, -webkit-transform 200ms ease-in-out 0s;
-  }
-  .banner summary::before,
-  .banner summary::after {
-    position: static;
-    top: 0;
-    left: 0;
-  }
-  .banner summary::before {
-    content: "";
-  }
-  .banner summary::after {
-    content: "III";
-    letter-spacing: -1px;
-  }
-  .banner summary:hover {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-  .banner summary::marker {
-    font-size: 0;
-  }
-  .banner summary::-webkit-details-marker {
-    display: none;
-  }
-  .banner details[open] .menu {
-    -webkit-animation-name: menuAnim;
-            animation-name: menuAnim;
-  }
-  .banner details[open] summary::before {
-    content: "X";
-  }
-  .banner details[open] summary::after {
-    content: "";
-  }
-  .banner .menu {
-    height: 0;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-    border-radius: var(--cornerRad);
-    background-color: var(--primColor);
-    -webkit-box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-            box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 8px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    overflow: hidden;
-    -webkit-animation: closeMenu 300ms ease-in-out forwards;
-            animation: closeMenu 300ms ease-in-out forwards;
-  }
-  .banner .menu a {
-    padding: 12px 24px;
-    margin: 0 16px;
-    color: var(--secoColor);
-    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-    text-align: center;
-    -webkit-transition: -webkit-filter 200ms linear 0s;
-    transition: -webkit-filter 200ms linear 0s;
-    transition: filter 200ms linear 0s;
-    transition: filter 200ms linear 0s, -webkit-filter 200ms linear 0s;
-  }
-  .banner .menu a:nth-of-type(1) {
-    padding-top: 24px;
-  }
-  .banner .menu a:nth-last-of-type(1) {
-    border-bottom: none;
-  }
-  .banner .menu a:hover {
-    -webkit-filter: brightness(200%);
-            filter: brightness(200%);
-  }
-  .banner details::before {
-    content: "← Click This Button";
-    color: var(--secoColor);
-    position: absolute;
-    margin-left: 80px;
-    padding: 10px 10px;
-    opacity: 0.4;
-  }
-  .banner details[open]::before {
-    -webkit-animation: fadeMe 300ms linear forwards;
-            animation: fadeMe 300ms linear forwards;
-  }
-  @-webkit-keyframes menuAnim {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 312px;
-    }
-  }
-  @keyframes menuAnim {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 312px;
-    }
-  }
-  @-webkit-keyframes fadeMe {
-    0% {
-      opacity: 0.4;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  @keyframes fadeMe {
-    0% {
-      opacity: 0.4;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
   .banner .navi {
     display: none;
   }
@@ -1450,7 +1296,15 @@
     height: 18vh;
   }
   .projects #img-1 .img-block {
-    height: 5vh;
+    height: 10vh;
+  }
+  .projects #img-1 .img-block .heading3 {
+    font-size: 16px;
+    margin-bottom: 1px;
+    margin-top: -8px;
+  }
+  .projects #img-1 .img-block .btn-1 {
+    padding: 1px 7px;
   }
   .projects .previous2 .next2 {
     left: 66%;
@@ -1533,6 +1387,9 @@
     width: 57%;
     height: 18%;
   }
+  .projects #img-1 .img-block {
+    height: 10vh;
+  }
   .projects .previous2 .prev2 {
     top: 91%;
     left: 8%;
@@ -1559,7 +1416,7 @@
   }
 }
 
-@media (min-width: 820px) {
+@media (min-width: 820px) and (max-width: 992px) {
   .banner .navi {
     left: 65%;
   }
@@ -1595,6 +1452,9 @@
   .projects #img-1 {
     width: 66%;
     height: 19vh;
+  }
+  .projects #img-1 .img-block {
+    height: 8vh;
   }
   .projects .previous2 .next2 {
     top: 93%;
@@ -1636,6 +1496,9 @@
   .projects #img-1 {
     width: 74%;
     height: 19vh;
+  }
+  .projects #img-1 .img-block {
+    height: 8vh;
   }
   .projects .previous2 .next2 {
     top: 92%;
