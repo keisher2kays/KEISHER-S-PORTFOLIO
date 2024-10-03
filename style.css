@@ -23,6 +23,143 @@
   --white: #fff;
 }
 
+body {
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+#page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #041680;
+  z-index: 999;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.slide-left, .slide-right {
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.slide-left {
+  -webkit-animation-name: slideLeft;
+          animation-name: slideLeft;
+}
+
+.slide-right {
+  -webkit-animation-name: slideRight;
+          animation-name: slideRight;
+}
+
+@-webkit-keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 .banner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,6 +181,7 @@
   background-color: black;
   color: white;
   z-index: 1;
+  /* Adjust your existing navMenu transition */
 }
 
 .banner .ham {
@@ -250,6 +388,32 @@
   transition: all 275ms 475ms;
 }
 
+.banner .page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1950FF;
+  z-index: 9999;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.banner .page-transition.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.banner .navMenu {
+  -webkit-transition: all 0.375s ease-in-out;
+  transition: all 0.375s ease-in-out;
+}
+
 .banner .navi {
   position: absolute;
   top: 8%;
@@ -267,16 +431,8 @@
 }
 
 .banner .navi .nav:hover {
-  padding: 10px 20px;
-  /* Adjust padding for a tag-like appearance */
-  background-color: #041680;
-  border-radius: 20px;
-  text-align: center;
+  color: #041680;
   cursor: pointer;
-  /* Pointer cursor on hover */
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 
 .banner .navi .nav1 {
@@ -287,16 +443,8 @@
 }
 
 .banner .navi .nav1:hover {
-  padding: 10px 20px;
-  /* Adjust padding for a tag-like appearance */
-  background-color: #041680;
-  border-radius: 20px;
-  text-align: center;
+  color: #041680;
   cursor: pointer;
-  /* Pointer cursor on hover */
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 
 .banner .navi .nav2 {
@@ -306,39 +454,22 @@
 }
 
 .banner .navi .nav2:hover {
-  padding: 10px 20px;
-  /* Adjust padding for a tag-like appearance */
-  background-color: #041680;
-  border-radius: 20px;
-  text-align: center;
+  color: #041680;
   cursor: pointer;
-  /* Pointer cursor on hover */
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 
 .banner .button1 {
   text-decoration: none;
   padding: 15px 30px;
-  /* Adjust padding for a tag-like appearance */
   background-color: #041680;
-  /* Background color */
   color: white;
-  /* Text color */
   border: none;
-  /* Remove border */
   border-radius: 20px;
-  /* Rounded edges */
   text-align: center;
-  /* Center text */
   font-size: 16px;
-  /* Font size */
   cursor: pointer;
-  /* Pointer cursor on hover */
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
-  /* Smooth transition for hover effect */
   left: 40%;
   top: 115%;
   position: absolute;
@@ -382,6 +513,281 @@
 .About {
   height: 100vh;
   overflow-y: hidden;
+  /* Adjust your existing navMenu transition */
+}
+
+.About .ham {
+  display: none;
+}
+
+.About .navTrigger {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-appearence: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.About .navTrigger:focus {
+  outline: none;
+}
+
+.About .navTrigger svg {
+  width: 64px;
+  height: 48px;
+  top: -6px;
+  left: -14px;
+  stroke: var(--color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: block;
+  position: absolute;
+}
+
+.About .navTrigger svg path {
+  -webkit-transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+  stroke-dashoffset: var(--offset, 126px);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+.About .navTrigger svg path:nth-child(2) {
+  --duration: .7s;
+  --easing: ease-in;
+  --offset: 100px;
+  --array-2: 74px;
+}
+
+.About .navTrigger svg path:nth-child(3) {
+  --offset: 133px;
+  --array-2: 107px;
+}
+
+.About .navTrigger.active svg {
+  stroke: var(--white);
+}
+
+.About .navTrigger.active svg path {
+  --offset: 57px;
+}
+
+.About .navTrigger.active svg path:nth-child(1), .About .navTrigger.active svg path:nth-child(3) {
+  --delay: .15s;
+  --easing: cubic-bezier(.2, .4, .2, 1.1);
+}
+
+.About .navTrigger.active svg path:nth-child(2) {
+  --duration: .4s;
+  --offset: 2px;
+  --array-1: 1px;
+}
+
+.About .navTrigger.active svg path:nth-child(3) {
+  --offset: 58px;
+}
+
+.About .navMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background: transparent;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  -webkit-transition: all .375s;
+  transition: all .375s;
+}
+
+.About .navMenu.active {
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
+}
+
+.About .navMenu.active::before {
+  -webkit-transform: skew(-14deg) translateX(0);
+          transform: skew(-14deg) translateX(0);
+}
+
+.About .navMenu.active li {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.About .navMenu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 3px;
+  background: #1950FF;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: skew(-14deg) translateX(-120%);
+          transform: skew(-14deg) translateX(-120%);
+  -webkit-transition: all .275s .1s;
+  transition: all .275s .1s;
+}
+
+.About .navMenu ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 93%;
+  /* Should be 100%, but we have a notice message :D */
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateX(-18%) skew(-16deg);
+          transform: translateX(-18%) skew(-16deg);
+}
+
+.About .navMenu ul li {
+  display: block;
+  margin: .5rem 0;
+  text-align: right;
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.About .navMenu ul li a {
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 12px 0;
+  color: var(--white);
+  font-size: 1.4em;
+  text-decoration: none;
+  -webkit-transform: skew(16deg);
+          transform: skew(16deg);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.About .navMenu ul li a:hover {
+  left: 10px;
+}
+
+.About .navMenu ul li:nth-child(1) {
+  -webkit-transition: all 275ms 275ms;
+  transition: all 275ms 275ms;
+}
+
+.About .navMenu ul li:nth-child(2) {
+  -webkit-transition: all 275ms 325ms;
+  transition: all 275ms 325ms;
+}
+
+.About .navMenu ul li:nth-child(3) {
+  -webkit-transition: all 275ms 375ms;
+  transition: all 275ms 375ms;
+}
+
+.About .navMenu ul li:nth-child(4) {
+  -webkit-transition: all 275ms 425ms;
+  transition: all 275ms 425ms;
+}
+
+.About .navMenu ul li:nth-child(5) {
+  -webkit-transition: all 275ms 475ms;
+  transition: all 275ms 475ms;
+}
+
+.About .page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1950FF;
+  z-index: 9999;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.About .page-transition.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.About .navMenu {
+  -webkit-transition: all 0.375s ease-in-out;
+  transition: all 0.375s ease-in-out;
+}
+
+.About .navi {
+  position: absolute;
+  top: 8%;
+  left: 75%;
+  z-index: 1;
+  padding: 15px 30px;
+  border-radius: 20px;
+}
+
+.About .navi .nav {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+  margin-right: 20px;
+}
+
+.About .navi .nav:hover {
+  color: #041680;
+  cursor: pointer;
+}
+
+.About .navi .nav1 {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+  margin-right: 20px;
+}
+
+.About .navi .nav1:hover {
+  color: #041680;
+  cursor: pointer;
+}
+
+.About .navi .nav2 {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+}
+
+.About .navi .nav2:hover {
+  color: #041680;
+  cursor: pointer;
 }
 
 .About h2 {
@@ -428,21 +834,17 @@
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
+  margin-bottom: -73px;
 }
 
 .About .textnskill .skill {
   margin: 20px;
   border-radius: 10px;
-  /* Change to a lower value for smooth rectangular corners */
   border-color: pink;
-  /* Border color */
   padding: 15px;
-  /* Adjust padding for a more rectangular look */
   border: 2px solid pink;
-  /* Border style */
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  /* Optional: Add a subtle shadow for depth */
 }
 
 .About .textnskill .first-row {
@@ -586,6 +988,284 @@
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   transition: background-color 0.3s;
+}
+
+.projects {
+  /* Adjust your existing navMenu transition */
+}
+
+.projects .ham {
+  display: none;
+}
+
+.projects .navTrigger {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-appearence: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.projects .navTrigger:focus {
+  outline: none;
+}
+
+.projects .navTrigger svg {
+  width: 64px;
+  height: 48px;
+  top: -6px;
+  left: -14px;
+  stroke: var(--color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: block;
+  position: absolute;
+}
+
+.projects .navTrigger svg path {
+  -webkit-transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+  stroke-dashoffset: var(--offset, 126px);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+.projects .navTrigger svg path:nth-child(2) {
+  --duration: .7s;
+  --easing: ease-in;
+  --offset: 100px;
+  --array-2: 74px;
+}
+
+.projects .navTrigger svg path:nth-child(3) {
+  --offset: 133px;
+  --array-2: 107px;
+}
+
+.projects .navTrigger.active svg {
+  stroke: var(--white);
+}
+
+.projects .navTrigger.active svg path {
+  --offset: 57px;
+}
+
+.projects .navTrigger.active svg path:nth-child(1), .projects .navTrigger.active svg path:nth-child(3) {
+  --delay: .15s;
+  --easing: cubic-bezier(.2, .4, .2, 1.1);
+}
+
+.projects .navTrigger.active svg path:nth-child(2) {
+  --duration: .4s;
+  --offset: 2px;
+  --array-1: 1px;
+}
+
+.projects .navTrigger.active svg path:nth-child(3) {
+  --offset: 58px;
+}
+
+.projects .navMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background: transparent;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  -webkit-transition: all .375s;
+  transition: all .375s;
+}
+
+.projects .navMenu.active {
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
+}
+
+.projects .navMenu.active::before {
+  -webkit-transform: skew(-14deg) translateX(0);
+          transform: skew(-14deg) translateX(0);
+}
+
+.projects .navMenu.active li {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.projects .navMenu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 3px;
+  background: #1950FF;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: skew(-14deg) translateX(-120%);
+          transform: skew(-14deg) translateX(-120%);
+  -webkit-transition: all .275s .1s;
+  transition: all .275s .1s;
+}
+
+.projects .navMenu ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 93%;
+  /* Should be 100%, but we have a notice message :D */
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateX(-18%) skew(-16deg);
+          transform: translateX(-18%) skew(-16deg);
+}
+
+.projects .navMenu ul li {
+  display: block;
+  margin: .5rem 0;
+  text-align: right;
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.projects .navMenu ul li a {
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 12px 0;
+  color: var(--white);
+  font-size: 1.4em;
+  text-decoration: none;
+  -webkit-transform: skew(16deg);
+          transform: skew(16deg);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+.projects .navMenu ul li a:hover {
+  left: 10px;
+}
+
+.projects .navMenu ul li:nth-child(1) {
+  -webkit-transition: all 275ms 275ms;
+  transition: all 275ms 275ms;
+}
+
+.projects .navMenu ul li:nth-child(2) {
+  -webkit-transition: all 275ms 325ms;
+  transition: all 275ms 325ms;
+}
+
+.projects .navMenu ul li:nth-child(3) {
+  -webkit-transition: all 275ms 375ms;
+  transition: all 275ms 375ms;
+}
+
+.projects .navMenu ul li:nth-child(4) {
+  -webkit-transition: all 275ms 425ms;
+  transition: all 275ms 425ms;
+}
+
+.projects .navMenu ul li:nth-child(5) {
+  -webkit-transition: all 275ms 475ms;
+  transition: all 275ms 475ms;
+}
+
+.projects .page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1950FF;
+  z-index: 9999;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.projects .page-transition.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.projects .navMenu {
+  -webkit-transition: all 0.375s ease-in-out;
+  transition: all 0.375s ease-in-out;
+}
+
+.projects .navi {
+  position: absolute;
+  top: 2%;
+  left: 75%;
+  z-index: 1;
+  padding: 15px 30px;
+  border-radius: 20px;
+}
+
+.projects .navi .nav {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+  margin-right: 20px;
+}
+
+.projects .navi .nav:hover {
+  color: #041680;
+  cursor: pointer;
+}
+
+.projects .navi .nav1 {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+  margin-right: 20px;
+}
+
+.projects .navi .nav1:hover {
+  color: #041680;
+  cursor: pointer;
+}
+
+.projects .navi .nav2 {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+}
+
+.projects .navi .nav2:hover {
+  color: #041680;
+  cursor: pointer;
 }
 
 .projects .projec {
@@ -941,6 +1621,281 @@
 
 #contact {
   height: 100vh;
+  /* Adjust your existing navMenu transition */
+}
+
+#contact .ham {
+  display: none;
+}
+
+#contact .navTrigger {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 1000;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: 0;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-appearence: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#contact .navTrigger:focus {
+  outline: none;
+}
+
+#contact .navTrigger svg {
+  width: 64px;
+  height: 48px;
+  top: -6px;
+  left: -14px;
+  stroke: var(--color);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: block;
+  position: absolute;
+}
+
+#contact .navTrigger svg path {
+  -webkit-transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  transition: stroke-dasharray var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s), stroke-dashoffset var(--duration, 0.85s) var(--easing, ease) var(--delay, 0s);
+  stroke-dasharray: var(--array-1, 26px) var(--array-2, 100px);
+  stroke-dashoffset: var(--offset, 126px);
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+
+#contact .navTrigger svg path:nth-child(2) {
+  --duration: .7s;
+  --easing: ease-in;
+  --offset: 100px;
+  --array-2: 74px;
+}
+
+#contact .navTrigger svg path:nth-child(3) {
+  --offset: 133px;
+  --array-2: 107px;
+}
+
+#contact .navTrigger.active svg {
+  stroke: var(--white);
+}
+
+#contact .navTrigger.active svg path {
+  --offset: 57px;
+}
+
+#contact .navTrigger.active svg path:nth-child(1), #contact .navTrigger.active svg path:nth-child(3) {
+  --delay: .15s;
+  --easing: cubic-bezier(.2, .4, .2, 1.1);
+}
+
+#contact .navTrigger.active svg path:nth-child(2) {
+  --duration: .4s;
+  --offset: 2px;
+  --array-1: 1px;
+}
+
+#contact .navTrigger.active svg path:nth-child(3) {
+  --offset: 58px;
+}
+
+#contact .navMenu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  background: transparent;
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+  -webkit-transition: all .375s;
+  transition: all .375s;
+}
+
+#contact .navMenu.active {
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
+}
+
+#contact .navMenu.active::before {
+  -webkit-transform: skew(-14deg) translateX(0);
+          transform: skew(-14deg) translateX(0);
+}
+
+#contact .navMenu.active li {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#contact .navMenu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 3px;
+  background: #1950FF;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: skew(-14deg) translateX(-120%);
+          transform: skew(-14deg) translateX(-120%);
+  -webkit-transition: all .275s .1s;
+  transition: all .275s .1s;
+}
+
+#contact .navMenu ul {
+  list-style: none;
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 93%;
+  /* Should be 100%, but we have a notice message :D */
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translateX(-18%) skew(-16deg);
+          transform: translateX(-18%) skew(-16deg);
+}
+
+#contact .navMenu ul li {
+  display: block;
+  margin: .5rem 0;
+  text-align: right;
+  opacity: 0;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+#contact .navMenu ul li a {
+  position: relative;
+  left: 0;
+  display: block;
+  padding: 12px 0;
+  color: var(--white);
+  font-size: 1.4em;
+  text-decoration: none;
+  -webkit-transform: skew(16deg);
+          transform: skew(16deg);
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+#contact .navMenu ul li a:hover {
+  left: 10px;
+}
+
+#contact .navMenu ul li:nth-child(1) {
+  -webkit-transition: all 275ms 275ms;
+  transition: all 275ms 275ms;
+}
+
+#contact .navMenu ul li:nth-child(2) {
+  -webkit-transition: all 275ms 325ms;
+  transition: all 275ms 325ms;
+}
+
+#contact .navMenu ul li:nth-child(3) {
+  -webkit-transition: all 275ms 375ms;
+  transition: all 275ms 375ms;
+}
+
+#contact .navMenu ul li:nth-child(4) {
+  -webkit-transition: all 275ms 425ms;
+  transition: all 275ms 425ms;
+}
+
+#contact .navMenu ul li:nth-child(5) {
+  -webkit-transition: all 275ms 475ms;
+  transition: all 275ms 475ms;
+}
+
+#contact .page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1950FF;
+  z-index: 9999;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+#contact .page-transition.active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+#contact .navMenu {
+  -webkit-transition: all 0.375s ease-in-out;
+  transition: all 0.375s ease-in-out;
+}
+
+#contact .navi {
+  position: absolute;
+  top: 8%;
+  left: 75%;
+  z-index: 1;
+  padding: 15px 30px;
+  border-radius: 20px;
+}
+
+#contact .navi .nav {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+  margin-right: 20px;
+}
+
+#contact .navi .nav:hover {
+  color: #041680;
+  cursor: pointer;
+}
+
+#contact .navi .nav1 {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+  margin-right: 20px;
+}
+
+#contact .navi .nav1:hover {
+  color: #041680;
+  cursor: pointer;
+}
+
+#contact .navi .nav2 {
+  text-decoration: none;
+  color: white;
+  font-family: "baloo", BalooBhaijaan;
+}
+
+#contact .navi .nav2:hover {
+  color: #041680;
+  cursor: pointer;
 }
 
 #contact .all {
@@ -1127,8 +2082,8 @@
   font-family: "easy", Baloo2;
 }
 
-/*LARGE SCREENS*/
-@media only screen and (max-width: 430px) {
+/*SMALL TABLETS*/
+@media (min-width: 540px) and (max-width: 768px) {
   .banner .ham {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1138,111 +2093,245 @@
     display: none;
   }
   .banner .header {
-    top: 46%;
-    left: 35%;
+    left: 47%;
+    top: 48%;
   }
   .banner .header h1 {
-    width: 150%;
-    font-size: 26px;
+    width: 114%;
   }
   .banner p {
-    margin-left: -53px;
-    width: 154%;
-    font-size: 16px;
+    margin-left: -20px;
+    width: 111%;
   }
   .banner .button1 {
-    padding: 6px 12px;
-    left: 24%;
-    top: 115%;
+    left: 29%;
   }
   .About {
-    height: 125vh;
+    height: 110vh;
+  }
+  .About .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .About .navi {
+    display: none;
   }
   .About #canvas {
-    height: 125vh;
+    height: 111vh;
   }
   .About .cont {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 45px;
   }
-  .About .slim {
-    width: 182%;
+  .About .cont .slim {
+    width: 141%;
   }
   .About .previous .prev {
-    left: 5%;
-    top: 116%;
+    top: 100%;
+    left: 8%;
   }
   .About .previous .next {
-    left: 70%;
-    top: 116%;
+    top: 100%;
+    left: 81%;
   }
-  .projects .projec {
-    left: 6em;
+  .projects .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  .projects .area {
-    height: 100vh;
-  }
-  .projects .row {
-    top: 4em;
+  .projects .navi {
+    display: none;
   }
   .projects #img-1 {
-    width: 300px;
-    height: 18vh;
-    height: 18vh;
+    width: 57%;
+    height: 18%;
   }
   .projects #img-1 .img-block {
     height: 10vh;
   }
-  .projects #img-1 .img-block .heading3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  .projects #img-1 .img-block .btn-1 {
-    padding: 7px 12px;
+  .projects .previous2 .prev2 {
+    top: 91%;
+    left: 8%;
   }
   .projects .previous2 .next2 {
-    left: 66%;
-    top: 92%;
+    left: 83%;
+    top: 91%;
   }
-  .projects .previous2 .prev2 {
-    top: 92%;
+  #contact .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
-  #contact .all p {
-    font-size: 15px;
-    width: 50%;
+  #contact .navi {
+    display: none;
   }
   #contact .comb {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 64vh;
-  }
-  #contact .comb .div2 {
-    margin-top: -56px;
-    margin-bottom: 40px;
-  }
-  #contact .comb .div3 {
-    margin-top: -87px;
-    margin-bottom: 40px;
+    height: 69vh;
   }
   #contact .comb .div {
-    margin-top: -84px;
+    margin-top: -80px;
+  }
+  #contact .comb .div3 {
+    margin-top: -67px;
   }
   #contact .prev3 {
-    top: 105%;
+    top: 110%;
   }
 }
 
-/*SMALL TO MEDIUM SCREENS*/
-@media only screen and (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 820px) and (max-width: 992px) {
+  .banner .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .banner .navi {
+    display: none;
+  }
+  .banner p {
+    margin-left: -102px;
+    width: 148%;
+  }
+  .banner .button1 {
+    left: 32%;
+  }
+  .banner .header {
+    top: 49%;
+  }
+  .About .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .About .navi {
+    display: none;
+  }
+  .About #canvas {
+    height: 100vh;
+  }
+  .About .cont {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .About .cont .slim {
+    width: 144%;
+  }
+  .About .previous .next {
+    top: 90%;
+    left: 81%;
+  }
+  .About .previous .prev {
+    top: 90%;
+  }
+  .projects .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+  }
+  .projects .navi {
+    display: none;
+  }
+  .projects #img-1 {
+    width: 66%;
+    height: 19vh;
+  }
+  .projects #img-1 .img-block {
+    height: 8vh;
+  }
+  .projects .previous2 .next2 {
+    top: 93%;
+    left: 81%;
+  }
+  .projects .previous2 .prev2 {
+    top: 93%;
+  }
+  #contact .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #contact .navi {
+    display: none;
+  }
+  #contact .comb .convo {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1024px) {
+  .banner .navi {
+    left: 62%;
+  }
+  .banner .header {
+    top: 49%;
+  }
+  .banner .button1 {
+    left: 36%;
+  }
+  .About .navi {
+    left: 66%;
+  }
+  .About #canvas {
+    height: 100vh;
+  }
+  .About .cont {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 64px;
+  }
+  .About .cont .slim {
+    width: 144%;
+  }
+  .About .cont .textnskill {
+    margin-top: 60px;
+  }
+  .projects .navi {
+    top: 1%;
+    left: 66%;
+  }
+  .projects #img-1 {
+    width: 74%;
+    height: 19vh;
+  }
+  .projects #img-1 .img-block {
+    height: 8vh;
+  }
+  .projects .previous2 .next2 {
+    top: 92%;
+  }
+  .projects .previous2 .prev2 {
+    top: 92%;
+  }
+  #contact .navi {
+    left: 66%;
+  }
+}
+
+/* Very Small Mobile Phones (e.g., iPhone SE) */
+@media only screen and (max-width: 320px) {
+  .banner .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .banner .navi {
     display: none;
   }
   .banner .header {
-    top: 45%;
+    top: 44%;
     left: 35%;
   }
   .banner .header h1 {
@@ -1250,20 +2339,31 @@
     font-size: 26px;
   }
   .banner p {
-    margin-left: -53px;
-    width: 154%;
+    margin-left: -70px;
+    width: 180%;
     font-size: 16px;
   }
   .banner .button1 {
     padding: 6px 12px;
-    left: 14%;
+    left: 8%;
     top: 115%;
   }
   .About {
-    height: 158vh;
+    height: 176vh;
+  }
+  .About .navMenu::before {
+    bottom: -432px;
+  }
+  .About .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .About .navi {
+    display: none;
   }
   .About #canvas {
-    height: 158vh;
+    height: 176vh;
   }
   .About .cont {
     -webkit-box-orient: vertical;
@@ -1272,21 +2372,38 @@
             flex-direction: column;
   }
   .About .slim {
-    width: 182%;
+    width: 178%;
+  }
+  .About .textnskill {
+    margin-left: -9px;
+  }
+  .About .textnskill .skill {
+    padding: 5px;
   }
   .About .previous .prev {
     left: 5%;
-    top: 147%;
+    top: 162%;
   }
   .About .previous .next {
-    left: 70%;
-    top: 147%;
+    left: 66%;
+    top: 162%;
+  }
+  .projects .navMenu::before {
+    bottom: -85px;
+  }
+  .projects .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .projects .navi {
+    display: none;
   }
   .projects .projec {
     left: 6em;
   }
   .projects .area {
-    height: 108vh;
+    height: 115vh;
   }
   .projects .row {
     top: 4em;
@@ -1296,7 +2413,7 @@
     height: 18vh;
   }
   .projects #img-1 .img-block {
-    height: 10vh;
+    height: 12vh;
   }
   .projects #img-1 .img-block .heading3 {
     font-size: 16px;
@@ -1308,10 +2425,21 @@
   }
   .projects .previous2 .next2 {
     left: 66%;
-    top: 97%;
+    top: 101%;
   }
   .projects .previous2 .prev2 {
-    top: 97%;
+    top: 101%;
+  }
+  #contact .navMenu::before {
+    bottom: -284px;
+  }
+  #contact .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #contact .navi {
+    display: none;
   }
   #contact .all p {
     font-size: 15px;
@@ -1340,63 +2468,282 @@
   }
 }
 
-/*SMALL TABLETS*/
-@media (min-width: 577px) and (max-width: 768px) {
+/* Small Mobile Phones (e.g., iPhone 8) */
+@media only screen and (min-width: 321px) and (max-width: 375px) {
+  .banner .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .banner .navi {
-    top: 4%;
-    left: 62%;
+    display: none;
   }
   .banner .header {
-    left: 47%;
-    top: 48%;
+    top: 46%;
+    left: 35%;
   }
   .banner .header h1 {
-    width: 114%;
+    width: 150%;
+    font-size: 26px;
   }
   .banner p {
-    margin-left: -20px;
-    width: 111%;
+    margin-left: -70px;
+    width: 180%;
+    font-size: 16px;
   }
   .banner .button1 {
-    left: 29%;
+    padding: 6px 12px;
+    left: 16%;
+    top: 115%;
   }
   .About {
-    height: 110vh;
+    height: 166vh;
+  }
+  .About .navMenu::before {
+    bottom: -435px;
+  }
+  .About .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .About .navi {
+    display: none;
   }
   .About #canvas {
-    height: 111vh;
+    height: 166vh;
   }
   .About .cont {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 38px;
   }
-  .About .cont .slim {
-    width: 141%;
+  .About .slim {
+    width: 178%;
+  }
+  .About .textnskill {
+    margin-left: -9px;
+  }
+  .About .textnskill .skill {
+    padding: 11px;
   }
   .About .previous .prev {
-    top: 100%;
-    left: 8%;
+    left: 5%;
+    top: 153%;
   }
   .About .previous .next {
-    top: 100%;
-    left: 81%;
+    left: 69%;
+    top: 153%;
+  }
+  .projects .navMenu::before {
+    bottom: -100px;
+  }
+  .projects .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .projects .navi {
+    display: none;
+  }
+  .projects .projec {
+    left: 6em;
+    margin-top: 46px;
+  }
+  .projects .area {
+    height: 115vh;
+  }
+  .projects .row {
+    top: 6em;
   }
   .projects #img-1 {
-    width: 57%;
-    height: 18%;
+    width: 300px;
+    height: 18vh;
   }
   .projects #img-1 .img-block {
     height: 10vh;
   }
-  .projects .previous2 .prev2 {
-    top: 91%;
-    left: 8%;
+  .projects #img-1 .img-block .heading3 {
+    font-size: 16px;
+    margin-bottom: 1px;
+    margin-top: -8px;
+  }
+  .projects #img-1 .img-block .btn-1 {
+    padding: 1px 7px;
   }
   .projects .previous2 .next2 {
-    left: 83%;
-    top: 91%;
+    left: 66%;
+    top: 101%;
+  }
+  .projects .previous2 .prev2 {
+    top: 101%;
+  }
+  #contact .navMenu::before {
+    bottom: -333px;
+  }
+  #contact .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #contact .navi {
+    display: none;
+  }
+  #contact .all p {
+    font-size: 15px;
+    width: 50%;
+  }
+  #contact .comb {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100vh;
+  }
+  #contact .comb .div2 {
+    margin-top: -56px;
+    margin-bottom: 40px;
+  }
+  #contact .comb .div3 {
+    margin-top: -87px;
+    margin-bottom: 40px;
+  }
+  #contact .comb .div {
+    margin-top: -84px;
+  }
+  #contact .prev3 {
+    top: 134%;
+  }
+}
+
+/* Medium Mobile Phones (e.g., iPhone X) */
+@media only screen and (min-width: 376px) and (max-width: 414px) {
+  .banner .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .banner .navi {
+    display: none;
+  }
+  .banner .header {
+    top: 47%;
+    left: 33%;
+  }
+  .banner .header h1 {
+    width: 150%;
+    font-size: 26px;
+  }
+  .banner p {
+    margin-left: -86px;
+    width: 180%;
+    font-size: 16px;
+  }
+  .banner .button1 {
+    padding: 6px 12px;
+    left: 19%;
+    top: 115%;
+  }
+  .About {
+    height: 127vh;
+  }
+  .About .navMenu::before {
+    bottom: -232px;
+  }
+  .About .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .About .navi {
+    display: none;
+  }
+  .About #canvas {
+    height: 127vh;
+  }
+  .About .cont {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 38px;
+  }
+  .About .slim {
+    width: 178%;
+  }
+  .About .textnskill {
+    margin-left: -9px;
+  }
+  .About .textnskill .skill {
+    padding: 11px;
+  }
+  .About .previous .prev {
+    left: 5%;
+    top: 116%;
+  }
+  .About .previous .next {
+    left: 69%;
+    top: 116%;
+  }
+  .projects .navMenu::before {
+    bottom: -53px;
+  }
+  .projects .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .projects .navi {
+    display: none;
+  }
+  .projects .projec {
+    left: 6em;
+    margin-top: 46px;
+  }
+  .projects .area {
+    height: 106vh;
+  }
+  .projects .row {
+    top: 6em;
+  }
+  .projects #img-1 {
+    width: 358px;
+    height: 18vh;
+  }
+  .projects #img-1 .img-block {
+    height: 10vh;
+  }
+  .projects #img-1 .img-block .heading3 {
+    font-size: 16px;
+    margin-bottom: 1px;
+    margin-top: -8px;
+  }
+  .projects #img-1 .img-block .btn-1 {
+    padding: 1px 7px;
+  }
+  .projects .previous2 .next2 {
+    left: 66%;
+    top: 96%;
+  }
+  .projects .previous2 .prev2 {
+    top: 96%;
+  }
+  #contact .navMenu::before {
+    bottom: -170px;
+  }
+  #contact .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #contact .navi {
+    display: none;
+  }
+  #contact .all p {
+    font-size: 15px;
+    width: 50%;
   }
   #contact .comb {
     -webkit-box-orient: vertical;
@@ -1405,106 +2752,404 @@
             flex-direction: column;
     height: 69vh;
   }
-  #contact .comb .div {
-    margin-top: -80px;
+  #contact .comb .div2 {
+    margin-top: -57px;
+    margin-bottom: -52px;
   }
   #contact .comb .div3 {
-    margin-top: -67px;
+    margin-top: -11px;
+    margin-bottom: 40px;
+  }
+  #contact .comb .div {
+    margin-top: -97px;
   }
   #contact .prev3 {
-    top: 110%;
+    top: 108%;
   }
 }
 
-@media (min-width: 820px) and (max-width: 992px) {
+/* Large Mobile Phones (e.g., iPhone 12 Pro Max) */
+@media only screen and (min-width: 410px) and (max-width: 430px) {
+  .banner .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .banner .navi {
-    left: 65%;
+    display: none;
+  }
+  .banner .header {
+    top: 47%;
+    left: 33%;
+  }
+  .banner .header h1 {
+    width: 150%;
+    font-size: 26px;
   }
   .banner p {
-    margin-left: -102px;
-    width: 148%;
+    margin-left: -86px;
+    width: 180%;
+    font-size: 16px;
   }
   .banner .button1 {
-    left: 32%;
+    padding: 6px 12px;
+    left: 19%;
+    top: 115%;
   }
-  .banner .header {
-    top: 49%;
+  .About {
+    height: 127vh;
+  }
+  .About .navMenu::before {
+    bottom: -232px;
+  }
+  .About .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .About .navi {
+    display: none;
   }
   .About #canvas {
-    height: 100vh;
+    height: 127vh;
   }
   .About .cont {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 38px;
   }
-  .About .cont .slim {
-    width: 144%;
+  .About .slim {
+    width: 178%;
   }
-  .About .previous .next {
-    top: 90%;
-    left: 81%;
+  .About .textnskill {
+    margin-left: -9px;
+  }
+  .About .textnskill .skill {
+    padding: 11px;
   }
   .About .previous .prev {
-    top: 90%;
+    left: 5%;
+    top: 116%;
+  }
+  .About .previous .next {
+    left: 69%;
+    top: 116%;
+  }
+  .projects .navMenu::before {
+    bottom: -53px;
+  }
+  .projects .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .projects .navi {
+    display: none;
+  }
+  .projects .projec {
+    left: 6em;
+    margin-top: 46px;
+  }
+  .projects .area {
+    height: 106vh;
+  }
+  .projects .row {
+    top: 6em;
   }
   .projects #img-1 {
-    width: 66%;
-    height: 19vh;
+    width: 358px;
+    height: 18vh;
   }
   .projects #img-1 .img-block {
-    height: 8vh;
+    height: 10vh;
+  }
+  .projects #img-1 .img-block .heading3 {
+    font-size: 16px;
+    margin-bottom: 1px;
+    margin-top: -8px;
+  }
+  .projects #img-1 .img-block .btn-1 {
+    padding: 1px 7px;
   }
   .projects .previous2 .next2 {
-    top: 93%;
-    left: 81%;
+    left: 66%;
+    top: 96%;
   }
   .projects .previous2 .prev2 {
-    top: 93%;
+    top: 96%;
   }
-  #contact .comb .convo {
-    font-size: 10px;
+  #contact .navMenu::before {
+    bottom: -170px;
+  }
+  #contact .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #contact .navi {
+    display: none;
+  }
+  #contact .all p {
+    font-size: 15px;
+    width: 50%;
+  }
+  #contact .comb {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 69vh;
+  }
+  #contact .comb .div2 {
+    margin-top: -57px;
+    margin-bottom: -52px;
+  }
+  #contact .comb .div3 {
+    margin-top: -11px;
+    margin-bottom: 40px;
+  }
+  #contact .comb .div {
+    margin-top: -97px;
+  }
+  #contact .prev3 {
+    top: 108%;
   }
 }
 
-@media only screen and (min-width: 993px) and (max-width: 1024px) {
+@media only screen and (min-width: 431px) and (max-width: 480px) {
+  .banner .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
   .banner .navi {
-    left: 69%;
+    display: none;
   }
   .banner .header {
-    top: 49%;
+    top: 47%;
+    left: 33%;
+  }
+  .banner .header h1 {
+    width: 150%;
+    font-size: 26px;
+  }
+  .banner p {
+    margin-left: -86px;
+    width: 180%;
+    font-size: 16px;
   }
   .banner .button1 {
-    left: 37%;
+    padding: 6px 12px;
+    left: 19%;
+    top: 115%;
+  }
+  .About {
+    height: 127vh;
+  }
+  .About .navMenu::before {
+    bottom: -232px;
+  }
+  .About .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .About .navi {
+    display: none;
   }
   .About #canvas {
-    height: 100vh;
+    height: 127vh;
   }
   .About .cont {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    margin-top: 38px;
   }
-  .About .cont .slim {
-    width: 144%;
+  .About .slim {
+    width: 178%;
   }
-  .About .cont .textnskill {
-    margin-top: 60px;
+  .About .textnskill {
+    margin-left: -9px;
+  }
+  .About .textnskill .skill {
+    padding: 11px;
+  }
+  .About .previous .prev {
+    left: 5%;
+    top: 116%;
+  }
+  .About .previous .next {
+    left: 69%;
+    top: 116%;
+  }
+  .projects .navMenu::before {
+    bottom: -53px;
+  }
+  .projects .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .projects .navi {
+    display: none;
+  }
+  .projects .projec {
+    left: 6em;
+    margin-top: 46px;
+  }
+  .projects .area {
+    height: 106vh;
+  }
+  .projects .row {
+    top: 6em;
   }
   .projects #img-1 {
-    width: 74%;
-    height: 19vh;
+    width: 358px;
+    height: 18vh;
   }
   .projects #img-1 .img-block {
-    height: 8vh;
+    height: 10vh;
+  }
+  .projects #img-1 .img-block .heading3 {
+    font-size: 16px;
+    margin-bottom: 1px;
+    margin-top: -8px;
+  }
+  .projects #img-1 .img-block .btn-1 {
+    padding: 1px 7px;
   }
   .projects .previous2 .next2 {
-    top: 92%;
+    left: 66%;
+    top: 96%;
   }
   .projects .previous2 .prev2 {
-    top: 92%;
+    top: 96%;
+  }
+  #contact .navMenu::before {
+    bottom: -170px;
+  }
+  #contact .ham {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  #contact .navi {
+    display: none;
+  }
+  #contact .all p {
+    font-size: 15px;
+    width: 50%;
+  }
+  #contact .comb {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 69vh;
+  }
+  #contact .comb .div2 {
+    margin-top: -57px;
+    margin-bottom: -52px;
+  }
+  #contact .comb .div3 {
+    margin-top: -11px;
+    margin-bottom: 40px;
+  }
+  #contact .comb .div {
+    margin-top: -97px;
+  }
+  #contact .prev3 {
+    top: 108%;
+  }
+}
+
+@media only screen and (min-height: 650px) and (max-height: 739px) {
+  .About {
+    height: 166vh;
+  }
+  .About .cont {
+    margin-top: 32px;
+  }
+  .About .previous .next {
+    left: 66%;
+    top: 153%;
+  }
+  .About .previous .prev {
+    top: 153%;
+  }
+}
+
+@media only screen and (min-height: 812px) and (max-height: 850px) {
+  .About {
+    height: 134vh;
+  }
+  .About .navMenu::before {
+    bottom: -280px;
+  }
+  .About #canvas {
+    height: 134vh;
+  }
+  .About .previous .next {
+    left: 69%;
+    top: 123%;
+  }
+  .About .previous .prev {
+    top: 123%;
+  }
+  .projects .navMenu::before {
+    bottom: -49px;
+  }
+  #contact .comb {
+    height: 71vh;
+  }
+}
+
+@media only screen and (min-height: 692px) and (max-height: 740px) {
+  .About {
+    height: 155vh;
+  }
+  .About .navMenu::before {
+    bottom: -407px;
+  }
+  .About .previous .next {
+    left: 69%;
+    top: 142%;
+  }
+  .About .previous .prev {
+    top: 142%;
+  }
+}
+
+@media only screen and (min-height: 736px) and (max-height: 810px) {
+  .About {
+    height: 145vh;
+  }
+  .About .navMenu::before {
+    bottom: -331px;
+  }
+  .About #canvas {
+    height: 145vh;
+  }
+  .About .previous .next {
+    left: 71%;
+    top: 134%;
+  }
+  .About .previous .prev {
+    top: 134%;
+  }
+  .projects .navMenu::before {
+    bottom: -44px;
+  }
+  #contact .comb {
+    height: 74vh;
+  }
+  #contact .comb .div2 {
+    margin-top: -9px;
+    margin-bottom: -15px;
   }
 }
 /*# sourceMappingURL=style.css.map */

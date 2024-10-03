@@ -11,6 +11,42 @@
     
 <div class="About">
 
+    <div class="navi">
+        <a href="index.html" class="nav-button nav">Home</a>
+        <a href="index2.html" class="nav-button nav">About</a>
+        <a href="index3.html"  class="nav-button nav1">Projects</a>
+        <a href="index4.html"  class="nav-button nav2">Contact</a>
+      </div>
+
+      
+  <div class="ham">
+    <button class="navTrigger" id="navTrigger">
+      <svg viewBox="0 0 64 48" >
+        <path d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37"></path>
+        <path d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24"></path>
+        <path d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37"></path>
+      </svg>
+    </button>
+    <nav class="navMenu" id="navMenu">
+      <ul>
+        <li>
+            <a href="index.html" class="nav-button">Home</a>
+          </li>
+        <li>
+          <a href="index2.html" class="nav-button">About me</a>
+        </li>
+        <li>
+          <a href="index3.html" class="nav-button">Projects</a>
+        </li>
+        <li>
+          <a href="index4.html" class="nav-button">Contact</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+    
+
     <canvas id="canvas"></canvas>
 
      <div class="cont">
@@ -44,12 +80,103 @@
     </div>
 
 <div class="previous">
-<a href="index.html" class="prev">Prev</a>
-<a href="index3.html" class="next">Next</a>
+<a href="index.html" class="nav-button prev">Prev</a>
+<a href="index3.html" class="nav-button next">Next</a>
+<!-- <div id="page-transition-overlay"></div> -->
 </div>
 
 </div>
-    
+<div id="page-transition-overlay">
+  <div class="overlay-content">
+    <div class="loading-spinner"></div>
+    <p>Loading awesomeness...</p>
+  </div>
+</div> 
+
+<style>
+  .loading-spinner {
+  width: 100px;
+  height: 100px;
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  border-top: 10px solid white;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  animation: rotate 1s linear infinite;
+}
+</style>
 </body>
 <script src="app.js"></script>
+<script src="transition.js"></script>
+<!-- <script>
+//     let burger = document.getElementById('navTrigger'),
+//     nav    = document.getElementById('navMenu');
+
+// burger.addEventListener('click', function(e){
+//   this.classList.toggle('active');
+//   nav.classList.toggle('active');
+// });
+
+let burger = document.getElementById('navTrigger');
+let nav = document.getElementById('navMenu');
+
+burger.addEventListener('click', function(e) {
+  this.classList.toggle('active');
+  nav.classList.toggle('active');
+});
+
+// Add event listeners to all links in the menu
+let menuLinks = nav.getElementsByTagName('a');
+for (let link of menuLinks) {
+  link.addEventListener('click', function(e) {
+    // Prevent the click event from bubbling up to the menu
+    e.stopPropagation();
+    
+    // If you want the menu to close when a link is clicked, uncomment the next two lines
+    burger.classList.remove('active');
+    nav.classList.remove('active');
+  });
+}
+
+</script> -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let burger = document.getElementById('navTrigger');
+      let nav = document.getElementById('navMenu');
+    
+      // Create page transition element
+      let pageTransition = document.createElement('div');
+      pageTransition.className = 'page-transition';
+      document.body.appendChild(pageTransition);
+    
+      burger.addEventListener('click', function(e) {
+        this.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+    
+      // Ensure menu starts closed
+      burger.classList.remove('active');
+      nav.classList.remove('active');
+    
+      // Add click event listeners to all menu links
+      let menuLinks = nav.getElementsByTagName('a');
+      for (let link of menuLinks) {
+        link.addEventListener('click', function(e) {
+          e.preventDefault(); // Prevent immediate navigation
+          
+          // Close the menu
+          burger.classList.remove('active');
+          nav.classList.remove('active');
+    
+          // Trigger page transition
+          pageTransition.classList.add('active');
+    
+          // Navigate to the new page after transition
+          setTimeout(() => {
+            window.location = this.href;
+          }, 500); // This should match the transition duration in CSS
+        });
+      }
+    });
+    </script>
 </html>
