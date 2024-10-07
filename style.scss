@@ -2363,7 +2363,7 @@ body {
                         }
                         .comb{
                             flex-direction: column;
-                            height: 69vh;
+                            height: 77vh;
                             .div2{
                                 margin-top: 66px;
                                 
@@ -2797,7 +2797,7 @@ height: 150vh;
 
   }
 
-  @media only screen and (min-height: 736px) and (max-height: 812px) {
+  @media only screen and (min-height: 736px) and (max-height: 799px) {
 
     .About{
         height: 141vh;
@@ -2833,11 +2833,14 @@ height: 150vh;
 
             .div2 {
                 margin-top: 29px;
-                margin-bottom: -15px;
+                // margin-bottom: -15px;
             }
             
             
         }
+    }
+    #contact .navMenu::before {
+        bottom: -110px;
     }
    
   }
@@ -2851,4 +2854,70 @@ height: 150vh;
             bottom: -342px;
         }
     }
+  }
+
+  @media only screen and (min-height: 720px) and (max-height: 725px){
+    .About{
+        height: 143vh;
+    }
+    .About #canvas {
+        height: 144vh;
+    }
+    .About .navMenu::before {
+        bottom: -309px;
+    }
+    .projects .row{
+        top: 5em;
+    }
+   .projects .projec{
+        margin-top: 1.5em;
+    }
+
+    #contact .all p {
+        width: 80%;
+    }
+  }
+
+
+  @media only screen and (min-height: 880px) and (max-height: 890px){
+    .About {
+        height: 131vh;
+
+        .navMenu::before {
+            bottom: -274px;
+        }
+    }
+    .projects .navMenu::before {
+        bottom: 1px;
+    }
+    .projects .area {
+        height: 100vh;
+    }
+  }
+
+  @media only screen and (min-height: 600px) and (max-height: 610px){
+    .About {
+        height: 162vh;
+        overflow-y: hidden;
+
+        #canvas{
+            height: 162vh;
+        }
+    }
+    .projects{
+        .area{
+            height: 155vh;
+        }
+        .row{
+            top: 7em;
+        }
+        .navi{
+            top: 8%;
+        }
+        #img-1 {
+            width: 55%;
+            height: 29vh;
+        }
+    }
+
   }
