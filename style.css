@@ -749,7 +749,7 @@ body {
 .About .navi {
   position: absolute;
   top: 8%;
-  left: 75%;
+  left: 72%;
   z-index: 1;
   padding: 15px 30px;
   border-radius: 20px;
@@ -911,10 +911,11 @@ body {
   -ms-flex-line-pack: center;
       align-content: center;
   position: absolute;
-  top: 8%;
+  top: 15%;
 }
 
 .About #canvas {
+  height: 100vh;
   width: 100%;
   top: 0;
   left: 0;
@@ -1226,8 +1227,8 @@ body {
 
 .projects .navi {
   position: absolute;
-  top: 2%;
-  left: 75%;
+  top: 8%;
+  left: 72%;
   z-index: 1;
   padding: 15px 30px;
   border-radius: 20px;
@@ -1270,9 +1271,7 @@ body {
 
 .projects .projec {
   text-align: center;
-  margin-top: 1em;
-  top: 1em;
-  left: 27em;
+  margin-top: 2.5em;
   font-family: "baloo", BalooBhaijaan;
   color: white;
 }
@@ -1448,7 +1447,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  top: 5em;
+  top: 9em;
 }
 
 .projects #img-1 {
@@ -1857,7 +1856,7 @@ body {
 #contact .navi {
   position: absolute;
   top: 8%;
-  left: 75%;
+  left: 72%;
   z-index: 1;
   padding: 15px 30px;
   border-radius: 20px;
@@ -2349,10 +2348,10 @@ body {
     top: 115%;
   }
   .About {
-    height: 176vh;
+    height: 170vh;
   }
   .About .navMenu::before {
-    bottom: -432px;
+    bottom: -399px;
   }
   .About .ham {
     display: -webkit-box;
@@ -2380,16 +2379,8 @@ body {
   .About .textnskill .skill {
     padding: 5px;
   }
-  .About .previous .prev {
-    left: 5%;
-    top: 162%;
-  }
-  .About .previous .next {
-    left: 66%;
-    top: 162%;
-  }
   .projects .navMenu::before {
-    bottom: -85px;
+    bottom: -40px;
   }
   .projects .ham {
     display: -webkit-box;
@@ -2403,10 +2394,10 @@ body {
     left: 6em;
   }
   .projects .area {
-    height: 115vh;
+    height: 107vh;
   }
   .projects .row {
-    top: 4em;
+    top: 6em;
   }
   .projects #img-1 {
     width: 300px;
@@ -2423,15 +2414,8 @@ body {
   .projects #img-1 .img-block .btn-1 {
     padding: 1px 7px;
   }
-  .projects .previous2 .next2 {
-    left: 66%;
-    top: 101%;
-  }
-  .projects .previous2 .prev2 {
-    top: 101%;
-  }
   #contact .navMenu::before {
-    bottom: -284px;
+    bottom: -165px;
   }
   #contact .ham {
     display: -webkit-box;
@@ -2443,25 +2427,25 @@ body {
   }
   #contact .all p {
     font-size: 15px;
-    width: 50%;
+    width: 80%;
   }
   #contact .comb {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100vh;
+    height: 79vh;
   }
   #contact .comb .div2 {
-    margin-top: -56px;
+    margin-top: 10px;
     margin-bottom: 40px;
   }
   #contact .comb .div3 {
-    margin-top: -87px;
+    margin-top: -25px;
     margin-bottom: 40px;
   }
   #contact .comb .div {
-    margin-top: -84px;
+    margin-top: -9px;
   }
   #contact .prev3 {
     top: 134%;
@@ -2500,7 +2484,7 @@ body {
     height: 166vh;
   }
   .About .navMenu::before {
-    bottom: -435px;
+    bottom: -335px;
   }
   .About .ham {
     display: -webkit-box;
@@ -2518,7 +2502,6 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 38px;
   }
   .About .slim {
     width: 178%;
@@ -2529,16 +2512,8 @@ body {
   .About .textnskill .skill {
     padding: 11px;
   }
-  .About .previous .prev {
-    left: 5%;
-    top: 153%;
-  }
-  .About .previous .next {
-    left: 69%;
-    top: 153%;
-  }
   .projects .navMenu::before {
-    bottom: -100px;
+    bottom: -27px;
   }
   .projects .ham {
     display: -webkit-box;
@@ -2553,7 +2528,7 @@ body {
     margin-top: 46px;
   }
   .projects .area {
-    height: 115vh;
+    height: 104vh;
   }
   .projects .row {
     top: 6em;
@@ -2573,15 +2548,8 @@ body {
   .projects #img-1 .img-block .btn-1 {
     padding: 1px 7px;
   }
-  .projects .previous2 .next2 {
-    left: 66%;
-    top: 101%;
-  }
-  .projects .previous2 .prev2 {
-    top: 101%;
-  }
   #contact .navMenu::before {
-    bottom: -333px;
+    bottom: -110px;
   }
   #contact .ham {
     display: -webkit-box;
@@ -2593,25 +2561,23 @@ body {
   }
   #contact .all p {
     font-size: 15px;
-    width: 50%;
+    width: 80%;
   }
   #contact .comb {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100vh;
+    height: 79vh;
   }
   #contact .comb .div2 {
-    margin-top: -56px;
-    margin-bottom: 40px;
+    margin-top: 46px;
   }
   #contact .comb .div3 {
-    margin-top: -87px;
-    margin-bottom: 40px;
+    margin-top: -35px;
   }
   #contact .comb .div {
-    margin-top: -84px;
+    margin-top: -30px;
   }
   #contact .prev3 {
     top: 134%;
@@ -2647,10 +2613,10 @@ body {
     top: 115%;
   }
   .About {
-    height: 127vh;
+    height: 114vh;
   }
   .About .navMenu::before {
-    bottom: -232px;
+    bottom: -125px;
   }
   .About .ham {
     display: -webkit-box;
@@ -2668,7 +2634,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 38px;
+    margin-top: -49px;
   }
   .About .slim {
     width: 178%;
@@ -2678,14 +2644,6 @@ body {
   }
   .About .textnskill .skill {
     padding: 11px;
-  }
-  .About .previous .prev {
-    left: 5%;
-    top: 116%;
-  }
-  .About .previous .next {
-    left: 69%;
-    top: 116%;
   }
   .projects .navMenu::before {
     bottom: -53px;
@@ -2703,7 +2661,7 @@ body {
     margin-top: 46px;
   }
   .projects .area {
-    height: 106vh;
+    height: 100vh;
   }
   .projects .row {
     top: 6em;
@@ -2723,15 +2681,8 @@ body {
   .projects #img-1 .img-block .btn-1 {
     padding: 1px 7px;
   }
-  .projects .previous2 .next2 {
-    left: 66%;
-    top: 96%;
-  }
-  .projects .previous2 .prev2 {
-    top: 96%;
-  }
   #contact .navMenu::before {
-    bottom: -170px;
+    bottom: -174px;
   }
   #contact .ham {
     display: -webkit-box;
@@ -2743,7 +2694,7 @@ body {
   }
   #contact .all p {
     font-size: 15px;
-    width: 50%;
+    width: 80%;
   }
   #contact .comb {
     -webkit-box-orient: vertical;
@@ -2753,23 +2704,18 @@ body {
     height: 69vh;
   }
   #contact .comb .div2 {
-    margin-top: -57px;
-    margin-bottom: -52px;
+    margin-top: 66px;
   }
   #contact .comb .div3 {
-    margin-top: -11px;
-    margin-bottom: 40px;
+    margin-top: -49px;
   }
   #contact .comb .div {
-    margin-top: -97px;
-  }
-  #contact .prev3 {
-    top: 108%;
+    margin-top: -44px;
   }
 }
 
 /* Large Mobile Phones (e.g., iPhone 12 Pro Max) */
-@media only screen and (min-width: 410px) and (max-width: 430px) {
+@media only screen and (min-width: 415px) and (max-width: 430px) {
   .banner .ham {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2788,7 +2734,7 @@ body {
   }
   .banner p {
     margin-left: -86px;
-    width: 180%;
+    width: 174%;
     font-size: 16px;
   }
   .banner .button1 {
@@ -2797,10 +2743,10 @@ body {
     top: 115%;
   }
   .About {
-    height: 127vh;
+    height: 111vh;
   }
   .About .navMenu::before {
-    bottom: -232px;
+    bottom: -104px;
   }
   .About .ham {
     display: -webkit-box;
@@ -2818,7 +2764,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 38px;
+    margin-top: -70px;
   }
   .About .slim {
     width: 178%;
@@ -2838,7 +2784,7 @@ body {
     top: 116%;
   }
   .projects .navMenu::before {
-    bottom: -53px;
+    bottom: 0px;
   }
   .projects .ham {
     display: -webkit-box;
@@ -2853,7 +2799,7 @@ body {
     margin-top: 46px;
   }
   .projects .area {
-    height: 106vh;
+    height: 100vh;
   }
   .projects .row {
     top: 6em;
@@ -2873,15 +2819,8 @@ body {
   .projects #img-1 .img-block .btn-1 {
     padding: 1px 7px;
   }
-  .projects .previous2 .next2 {
-    left: 66%;
-    top: 96%;
-  }
-  .projects .previous2 .prev2 {
-    top: 96%;
-  }
   #contact .navMenu::before {
-    bottom: -170px;
+    bottom: -175px;
   }
   #contact .ham {
     display: -webkit-box;
@@ -2893,7 +2832,7 @@ body {
   }
   #contact .all p {
     font-size: 15px;
-    width: 50%;
+    width: 80%;
   }
   #contact .comb {
     -webkit-box-orient: vertical;
@@ -2903,7 +2842,7 @@ body {
     height: 69vh;
   }
   #contact .comb .div2 {
-    margin-top: -57px;
+    margin-top: 10px;
     margin-bottom: -52px;
   }
   #contact .comb .div3 {
@@ -2946,10 +2885,10 @@ body {
     top: 115%;
   }
   .About {
-    height: 127vh;
+    height: 119vh;
   }
   .About .navMenu::before {
-    bottom: -232px;
+    bottom: -162px;
   }
   .About .ham {
     display: -webkit-box;
@@ -2967,7 +2906,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 38px;
+    margin-top: -21px;
   }
   .About .slim {
     width: 178%;
@@ -2978,16 +2917,8 @@ body {
   .About .textnskill .skill {
     padding: 11px;
   }
-  .About .previous .prev {
-    left: 5%;
-    top: 116%;
-  }
-  .About .previous .next {
-    left: 69%;
-    top: 116%;
-  }
   .projects .navMenu::before {
-    bottom: -53px;
+    bottom: 0px;
   }
   .projects .ham {
     display: -webkit-box;
@@ -3002,7 +2933,7 @@ body {
     margin-top: 46px;
   }
   .projects .area {
-    height: 106vh;
+    height: 100vh;
   }
   .projects .row {
     top: 6em;
@@ -3030,7 +2961,7 @@ body {
     top: 96%;
   }
   #contact .navMenu::before {
-    bottom: -170px;
+    bottom: -162px;
   }
   #contact .ham {
     display: -webkit-box;
@@ -3052,7 +2983,7 @@ body {
     height: 69vh;
   }
   #contact .comb .div2 {
-    margin-top: -57px;
+    margin-top: 12px;
     margin-bottom: -52px;
   }
   #contact .comb .div3 {
@@ -3067,12 +2998,15 @@ body {
   }
 }
 
-@media only screen and (min-height: 650px) and (max-height: 739px) {
+@media only screen and (min-height: 660px) and (max-height: 739px) {
   .About {
-    height: 166vh;
+    height: 150vh;
+  }
+  .About .navMenu::before {
+    bottom: -335px;
   }
   .About .cont {
-    margin-top: 32px;
+    margin-top: -20px;
   }
   .About .previous .next {
     left: 66%;
@@ -3085,10 +3019,10 @@ body {
 
 @media only screen and (min-height: 812px) and (max-height: 850px) {
   .About {
-    height: 134vh;
+    height: 121vh;
   }
   .About .navMenu::before {
-    bottom: -280px;
+    bottom: -178px;
   }
   .About #canvas {
     height: 134vh;
@@ -3101,7 +3035,7 @@ body {
     top: 123%;
   }
   .projects .navMenu::before {
-    bottom: -49px;
+    bottom: 0px;
   }
   #contact .comb {
     height: 71vh;
@@ -3124,32 +3058,44 @@ body {
   }
 }
 
-@media only screen and (min-height: 736px) and (max-height: 810px) {
+@media only screen and (min-height: 736px) and (max-height: 812px) {
   .About {
-    height: 145vh;
+    height: 141vh;
   }
   .About .navMenu::before {
-    bottom: -331px;
+    bottom: -304px;
   }
   .About #canvas {
-    height: 145vh;
+    height: 150vh;
   }
   .About .previous .next {
     left: 71%;
-    top: 134%;
+    top: 140%;
   }
   .About .previous .prev {
-    top: 134%;
+    top: 140%;
   }
   .projects .navMenu::before {
-    bottom: -44px;
+    bottom: 0px;
+  }
+  #contact .prev3 {
+    top: 132%;
   }
   #contact .comb {
-    height: 74vh;
+    height: 65vh;
   }
   #contact .comb .div2 {
-    margin-top: -9px;
+    margin-top: 29px;
     margin-bottom: -15px;
+  }
+}
+
+@media only screen and (min-height: 650px) and (max-height: 660px) {
+  .About {
+    height: 152vh;
+  }
+  .About .navMenu::before {
+    bottom: -342px;
   }
 }
 /*# sourceMappingURL=style.css.map */
