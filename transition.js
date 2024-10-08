@@ -47,12 +47,30 @@ document.querySelectorAll('.nav-button').forEach(button => {
   });
 });
 
+// function pageTransition(url, direction) {
+//   const overlay = document.getElementById('page-transition-overlay');
+//   const body = document.body;
+
+//   // Trigger the transition
+//   body.classList.add(direction === 'next' ? 'slide-left' : 'slide-right');
+//   overlay.style.transform = 'translateX(0)';
+
+//   // Smooth scroll to top
+//   window.scrollTo({
+//     top: 0,
+//     behavior: 'smooth'
+//   });
+
+//   // Wait for scroll and animation to complete
+//   setTimeout(() => {
+//     window.location.href = url;
+//   }, 500); // Adjust timing as needed
+// }
 function pageTransition(url, direction) {
   const overlay = document.getElementById('page-transition-overlay');
   const body = document.body;
 
   // Trigger the transition
-  body.classList.add(direction === 'next' ? 'slide-left' : 'slide-right');
   overlay.style.transform = 'translateX(0)';
 
   // Smooth scroll to top
@@ -66,7 +84,6 @@ function pageTransition(url, direction) {
     window.location.href = url;
   }, 500); // Adjust timing as needed
 }
-
 // Handle page loads from back/forward cache
 window.addEventListener('pageshow', function(event) {
   if (event.persisted) {
