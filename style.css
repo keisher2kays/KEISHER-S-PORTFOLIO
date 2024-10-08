@@ -2186,7 +2186,7 @@ body {
   }
 }
 
-@media (min-width: 820px) and (max-width: 992px) {
+@media (min-width: 800px) and (max-width: 820px) {
   .banner .ham {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3019,7 +3019,7 @@ body {
 
 @media only screen and (min-height: 812px) and (max-height: 850px) {
   .About {
-    height: 121vh;
+    height: 133vh;
   }
   .About .navMenu::before {
     bottom: -178px;
@@ -3036,6 +3036,9 @@ body {
   }
   .projects .navMenu::before {
     bottom: 0px;
+  }
+  .projects .area {
+    height: 100vh;
   }
   #contact .comb {
     height: 71vh;
@@ -3122,7 +3125,7 @@ body {
   }
 }
 
-@media only screen and (min-height: 880px) and (max-height: 890px) {
+@media only screen and (min-height: 880px) and (max-height: 915px) {
   .About {
     height: 131vh;
   }
@@ -3157,6 +3160,53 @@ body {
   .projects #img-1 {
     width: 55%;
     height: 29vh;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1585px) {
+  .About {
+    height: 100vh;
+  }
+  #contact .comb {
+    height: 50vh;
+  }
+  .projects .navi {
+    top: 6%;
+  }
+}
+
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+  .banner .navi {
+    left: 70%;
+  }
+}
+
+@media only screen and (min-width: 1586px) and (max-width: 2560px) {
+  .banner .para p {
+    margin-bottom: 13px;
+    margin-top: -22px;
+  }
+  .banner .navi {
+    left: 83%;
+  }
+  .About {
+    height: 100vh;
+  }
+  .About .navi {
+    left: 83%;
+  }
+  .About .cont {
+    margin-top: 51px;
+  }
+  .projects .navi {
+    left: 83%;
+  }
+  .projects .row #img-1 {
+    width: 33%;
+    height: 31vh;
+  }
+  #contact .navi {
+    left: 83%;
   }
 }
 /*# sourceMappingURL=style.css.map */
