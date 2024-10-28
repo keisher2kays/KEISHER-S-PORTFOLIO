@@ -1,7 +1,7 @@
 document.getElementById('downloadCV').addEventListener('click', function(e) {
     e.preventDefault(); // Prevent the default anchor behavior
     const url = this.getAttribute('href');
-    const filename = 'cv/cv.doc'; // Desired filename for the download
+    const filename = 'cv/my cv.doc'; // Desired filename for the download
     
     fetch(url)
       .then(response => response.blob()) // Fetch the file and get it as a Blob
